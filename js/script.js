@@ -10,11 +10,33 @@
 L'output del prezzo finale va messo fuori(con massimo due decimali) */
 
 //Kilometri
-const numkm = parseInt( prompt('Inserisci il numero di Kilometri da percorrere: ') );
-console.log(numkm);
+const numKm = parseInt( prompt('Inserisci il numero di Kilometri da percorrere: ') );
+console.log(numKm);
 //Anni
-const etautente = parseInt( prompt('Quanti anni hai?') );
-console.log(etautente);
+const etaUtente = parseInt( prompt('Quanti anni hai?') );
+console.log(etaUtente);
 //prezzo biglietto
-let prezzoticket = numkm * 0.21;
-console.log(prezzoticket);
+let prezzoTicket = numKm * 0.21;
+console.log(prezzoTicket);
+//Sconto in base all'età
+let sconto;
+let totale;
+if (etaUtente > 65) {
+    sconto = (prezzoTicket * 40) / 100;
+    totale = prezzoTicket - sconto;
+    console.log(totale);
+}else if (etaUtente < 18) {
+    sconto = (prezzoTicket * 20) / 100;
+    totale = prezzoTicket - sconto;
+    console.log(totale);
+
+}else {
+    totale = prezzoTicket
+}
+//OUTPUT
+alert(totale);
+
+
+
+
+//let prezzoTicket = numKm * (0.21 - ((0.21 * sconto ) / 100));
